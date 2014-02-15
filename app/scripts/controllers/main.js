@@ -1,4 +1,10 @@
-define(['angular'], function (angular) {
+define([
+  'angular',
+  'models/model'
+], function (
+  angular,
+  StSinclairModel
+) {
   'use strict';
 
   angular.module('stsinclairApp.controllers.MainCtrl', [])
@@ -8,5 +14,9 @@ define(['angular'], function (angular) {
         'AngularJS',
         'Karma'
       ];
+
+      $scope.products = StSinclairModel.products;
+
+      console.log($scope.products);
     });
 });
