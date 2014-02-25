@@ -1,0 +1,26 @@
+// clearfix
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+// global elements
+* {
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Georgia, serif;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1080px;
+  position: relative;
+  width: 100%;
+}

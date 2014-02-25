@@ -5,6 +5,7 @@ define(function () {
     products: [
       {
         color: 'Acid Leather',
+        price: '$150',
         images: {
           front: {
             sm: '/images/Acid-leather_Brian-Collars4479_960.jpg',
@@ -22,6 +23,7 @@ define(function () {
       },
       {
         color: 'Black Leather',
+        price: '$150',
         images: {
           front: {
             sm: '/images/Black-leather_Brian-Collars4476_960.jpg',
@@ -39,6 +41,7 @@ define(function () {
       },
       {
         color: 'Black',
+        price: '$100',
         images: {
           front: {
             sm: '/images/Black_Brian-Collars4434_960.jpg',
@@ -56,6 +59,7 @@ define(function () {
       },
       {
         color: 'Brown',
+        price: '$100',
         images: {
           front: {
             sm: '/images/Brown_Brian-Collars4455_960.jpg',
@@ -73,6 +77,7 @@ define(function () {
       },
       {
         color: 'Navy',
+        price: '$100',
         images: {
           front: {
             sm: '/images/Navy_Brian-Collars4492_960.jpg',
@@ -90,6 +95,7 @@ define(function () {
       },
       {
         color: 'White',
+        price: '$100',
         images: {
           front: {
             sm: '/images/White_Brian-Collars4503_960.jpg',
