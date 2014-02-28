@@ -1,0 +1,13 @@
+<div class="carousel-container">
+    <div class="carousel-wrap">
+        <ul class="carousel">
+            <li ng-repeat="product in carousel.images">
+                {{carousel.color}}
+            </li>
+        </ul>
+        <div class="carousel-controls">
+            <a href="#" data-pd ng-click="prev()">prev</a>
+            <a href="#" data-pd ng-click="next()">next</a>
+        </div>
+    </div>
+</div>

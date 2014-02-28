@@ -8,10 +8,12 @@
 <section class="wrap">
   <ul class="products cf">
     <li ng-repeat="product in products">
-      <a href="#">
+      <a href="#" data-pd ng-click="select(product)">
         <img src="{{product.images.front.sm}}" alt="{{product.color}}" />
         <h2>{{product.color}}, <span>{{product.price}}</span></h2>
       </a>
     </li>
   </ul>
 </section>
+
+<div data-carousel></div>
