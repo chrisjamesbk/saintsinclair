@@ -14,9 +14,18 @@ define([
 
       $scope.select = function (product) {
         $scope.selectedProduct = product;
-        console.log('select');
-        console.log(product);
         $scope.$broadcast('productSelected', product);
+        $scope.carouselOpen = true;
+      };
+
+      $scope.$on('carouselOpen', function (evt, open) {
+        $scope.carouselOpen = open;
+      });
+
+      $scope.style = function () {
+        return {
+          'display': ($scope.carouselOpen) ? 'none' : 'block'
+        };
       };
     })
 
@@ -25,21 +34,44 @@ define([
       var CarouselCtrl = function ($scope) {
         $scope.carousel = {
           images: {},
-          color: ''
+          color: '',
+          show: false
         };
 
         $scope.$on('productSelected', function (evt, product) {
-          console.log('on');
-          console.log(product);
-          $scope.carousel = {
-            images: product.images,
-            color: product.color
-          };
+          angular.extend(
+            $scope.carousel,
+            {
+              images: product.images,
+              color: product.color,
+              show: true
+            }
+          );
+
+          $scope.carousel.images.back.active = true;
+
         });
+
+        $scope.close = function () {
+          $scope.carousel.show = false;
+          $scope.$emit('carouselOpen', false);
+        };
       };
 
       var linkFn = function (scope) {
-        console.log(scope);
+        function getWindowHeight() {
+          var zoomLevel = document.documentElement.clientWidth / window.innerWidth;
+
+          return window.innerHeight * zoomLevel;
+        }
+
+        scope.height = function () {
+          var headerHeight = 100;
+
+          return {
+            'height': (getWindowHeight() - headerHeight) + 'px'
+          };
+        };
       };
 
       return {

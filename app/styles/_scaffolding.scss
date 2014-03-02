@@ -21,6 +21,10 @@ body {
 .wrap {
   margin: 0 auto;
   max-width: 1080px;
-  position: relative;
+  min-width: 320px;
   width: 100%;
+
+  &.rel {
+    position: relative;
+  }
 }

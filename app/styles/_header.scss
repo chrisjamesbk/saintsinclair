@@ -1,7 +1,18 @@
 header[role="banner"] {
+  background: #fff;
   border-bottom: 1px solid #ddd;
   height: 100px;
+  left: 0;
   line-height: 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  @media (max-width: 754px) {
+    height: 60px;
+    line-height: 60px;
+  }
 }
 
 .header__title {
@@ -12,7 +23,7 @@ header[role="banner"] {
     padding: 0 7.25%;
   }
 
-  @media (max-width: 754px) {
+  @media (max-width: 400px) {
     padding: 0 14%;
   }
 }
@@ -31,10 +42,11 @@ header[role="banner"] {
   }
 
   @media (max-width: 754px) {
+    line-height: 60px;
     padding: 0 7.25%;
   }
 
-  @media (max-width: 754px) {
+  @media (max-width: 400px) {
     padding: 0 14%;
   }
 }

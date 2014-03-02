@@ -1,12 +1,12 @@
 <header role="banner" class="cf">
-  <div class="wrap">
+  <div class="wrap rel">
     <h1 class="header__title"><a ng-href="#">Saint Sinclair</a></h1>
-    <a href="#" class="header__shop">Shop</a>
+    <a href="#" class="header__shop" ng-show="!carouselOpen">Shop</a>
   </div>
 </header>
 
 <section class="wrap">
-  <ul class="products cf">
+  <ul class="products cf" ng-style="style()">
     <li ng-repeat="product in products">
       <a href="#" data-pd ng-click="select(product)">
         <img src="{{product.images.front.sm}}" alt="{{product.color}}" />

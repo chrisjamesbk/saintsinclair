@@ -1,13 +1,23 @@
-<div class="carousel-container">
-    <div class="carousel-wrap">
-        <ul class="carousel">
-            <li ng-repeat="product in carousel.images">
-                {{carousel.color}}
-            </li>
-        </ul>
-        <div class="carousel-controls">
-            <a href="#" data-pd ng-click="prev()">prev</a>
-            <a href="#" data-pd ng-click="next()">next</a>
+<div class="carousel-container" ng-show="carousel.show" ng-style="height()">
+    <div class="carousel-full">
+        <div class="wrap">
+            <ul class="carousel-dir cf">
+                <li><a href="#" data-pd ng-click="prev()">prev</a></li>
+                <li><a href="#" data-pd ng-click="next()">next</a></li>
+            </ul>
+            <ul class="carousel-nav">
+                <li ng-repeat="product in carousel.images" ng-class="{'is-active': product.active}" ng-click="nav($index)"></li>
+            </ul>
+            <a href="#" class="carousel-close" data-pd ng-click="close()">x</a>
+        </div>
+    </div>
+    <div class="carousel-full pad-btm">
+        <div class="carousel-wrap">
+            <ul class="carousel">
+                <li ng-repeat="product in carousel.images" ng-class="{'is-active': product.active}" ng-style="height()">
+                    <img ng-src="{{product.sm}}" />
+                </li>
+            </ul>
         </div>
     </div>
 </div>
